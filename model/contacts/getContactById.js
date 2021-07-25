@@ -1,4 +1,4 @@
-const contacts = require('../contacts.json')
+const contacts = require('../../data/contacts.json')
 
 const getContactById = async (req, res) => {
   const { contactId } = req.params
@@ -8,7 +8,7 @@ const getContactById = async (req, res) => {
     res.status(404).json({
       status: 'error',
       code: 404,
-      message: 'contact with this id not found'
+      message: 'Contact with this id not found'
     })
     return
   }

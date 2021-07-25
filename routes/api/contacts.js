@@ -6,10 +6,10 @@ router.get('/', ctrl.listContacts)
 
 router.get('/:contactId', ctrl.getContactById)
 
-// router.post('/', contactsModel.addContact)
+router.post('/', express.json(), ctrl.addContact)
 
-// router.delete('/:contactId', contactsModel.removeContact)
+router.delete('/:contactId', ctrl.removeContact)
 
-// router.patch('/:contactId', contactsModel.updateContact)
+router.put('/:contactId', express.json(), ctrl.updateContact)
 
 module.exports = router

@@ -1,6 +1,6 @@
-const contacts = require('../contacts.json')
+const contacts = require('../../data/contacts.json')
 
-const listContacts = (req, res) => {
+const listContacts = async (req, res) => {
   res.json({
     status: 'success',
     code: 200,
