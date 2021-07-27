@@ -1,4 +1,3 @@
-
 const contactSchema = require('../../utils/validate/schemas/contacts')
 const contacts = require('../../data/contacts.json')
 
