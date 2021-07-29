@@ -12,7 +12,7 @@ router.post('/', express.json(), validateMiddleware(validateContact), ctrl.add)
 
 router.put('/:id', express.json(), ctrl.update)
 
-router.patch('/:id/favorite', express.json(), ctrl.update)
+router.patch('/:id/favorite', express.json(), ctrl.toggleFavorite)
 
 router.delete('/:id', ctrl.del)
 

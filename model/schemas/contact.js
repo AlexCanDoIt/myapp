@@ -33,17 +33,6 @@ const contactSchema = Schema({
   timestamps: true
 })
 
-// contactSchema.methods.validateData = function (newContact) {
-//   const schema = Joi.object({
-//     name: Joi.string().min(2).required(),
-//     email: Joi.string().email(),
-//     phone: Joi.string(),
-//     favorite: Joi.boolean()
-//   })
-//   const { error } = schema.validate(newContact)
-//   return error
-// }
-
 const validateContact = (newContact) => {
   const schema = Joi.object({
     name: Joi.string().min(2).required(),
