@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 const current = async (req, res, next) => {
   const currentUser = {
     _id: req.user._id,

@@ -12,9 +12,14 @@ const add = ({ email, password }) => {
 
 const updateById = (id, body) => User.findByIdAndUpdate(id, body)
 
+const updateAvatar = async (id, avatar, idCloudAvatar = null) => {
+  return await User.updateOne({ _id: id }, { avatar, idCloudAvatar })
+}
+
 module.exports = {
   getById,
   getOne,
   add,
-  updateById
+  updateById,
+  updateAvatar
 }
