@@ -2,6 +2,7 @@ const { Schema } = require('mongoose')
 const bcrypt = require('bcryptjs')
 const Joi = require('joi')
 const gravatar = require('gravatar')
+const { v4: uuidv4 } = require('uuid')
 
 const userSchema = Schema({
   email: {
@@ -31,7 +32,16 @@ const userSchema = Schema({
   idCloudAvatar: {
     type: String,
     default: null
-  }
+  },
+  verify: {
+    type: Boolean,
+    default: false,
+  },
+  verifyToken: {
+    type: String,
+    required: [true, 'Verify token is required'],
+    default: uuidv4(),
+  },
 })
 
 userSchema.methods.setPassword = function (password) {

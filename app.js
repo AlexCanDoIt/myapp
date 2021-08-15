@@ -9,6 +9,39 @@ const api = require('./routes/api')
 const app = express()
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short'
 
+// =================================================================================================
+
+// const nodemailer = require('nodemailer')
+// // require('dotenv').config()
+
+// const { EMAIL_PASSWORD } = process.env
+
+// const nodemailerConfig = {
+//   host: 'smtp.meta.ua',
+//   port: 465,
+//   secure: true,
+//   auth: {
+//     user: 'alexcandoit@meta.ua',
+//     pass: EMAIL_PASSWORD
+//   },
+// }
+
+// const transporter = nodemailer.createTransport(nodemailerConfig)
+
+// const mail = {
+//   from: 'alexcandoit@meta.ua',
+//   to: 'alexcandoitt@gmail.com',
+//   subject: 'Test email subject',
+//   text: 'Test email text',
+//   html: '<h2>Test message in html</h2>'
+// }
+
+// transporter.sendMail(mail)
+//   .then(info => console.log(info))
+//   .catch(err => console.log(err))
+
+// =================================================================================================
+
 app.use(express.static(path.join(process.cwd(), 'public')))
 app.use(logger(formatsLogger))
 app.use(cors())

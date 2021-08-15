@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const app = require('../app')
-const createFolderIsNotExist = require('../helpers/create-folder')
+const createFolderIsNotExist = require('../utils/create-folder')
 const path = require('path')
 require('dotenv').config()
 

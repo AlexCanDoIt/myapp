@@ -2,7 +2,7 @@ const path = require('path')
 const fs = require('fs/promises')
 const jimp = require('jimp')
 require('dotenv').config()
-const createFolderIsNotExist = require('../../helpers/create-folder')
+const createFolderIsNotExist = require('../../utils/create-folder')
 const { user: service } = require('../../services')
 
 class UploadAvatarService {

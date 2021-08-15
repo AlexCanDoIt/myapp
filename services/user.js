@@ -21,5 +21,5 @@ module.exports = {
   getOne,
   add,
   updateById,
-  updateAvatar
+  updateAvatar,
 }
