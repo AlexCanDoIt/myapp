@@ -7,6 +7,16 @@ const login = async (req, res, next) => {
 
   try {
     const user = await service.getOne({ email })
+    const { verify } = user
+
+    if (!verify) {
+      res.status(401).json({
+        status: 'error',
+        code: 401,
+        message: 'Email not confirmed'
+      })
+      return
+    }
 
     if (!user || !user.comparePassword(password)) {
       res.status(401).json({

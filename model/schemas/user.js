@@ -50,6 +50,15 @@ userSchema.methods.comparePassword = function (password) {
   return bcrypt.compareSync(password, this.password)
 }
 
+const validateEmail = (newUser) => {
+  const schema = Joi.object({
+    email: Joi.string().email({ minDomainSegments: 2 }).required(),
+  }).options({ allowUnknown: true })
+
+  const { error } = schema.validate(newUser)
+  return error
+}
+
 const validateUser = (newUser) => {
   const schema = Joi.object({
     email: Joi.string().email({ minDomainSegments: 2 }).required(),
@@ -60,4 +69,4 @@ const validateUser = (newUser) => {
   return error
 }
 
-module.exports = { userSchema, validateUser }
+module.exports = { userSchema, validateEmail, validateUser }
