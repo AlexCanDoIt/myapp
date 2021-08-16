@@ -36,29 +36,3 @@ app.use((err, _, res, __) => {
 })
 
 module.exports = app
-
-// const sgMail = require('@sendgrid/mail')
-// // require('dotenv').config()
-// const { SENDGRID_API_KEY } = process.env
-
-// sgMail.setApiKey(SENDGRID_API_KEY)
-
-// const sendMail = async() => {
-//   const mail = {
-//     to: 'mr.archibaldd@gmail.com',
-//     from: 'alexcandoitt@gmail.com',
-//     subject: 'Подтвердите свой email',
-//     text: 'hi',
-//     html: `<a href="http://localhost:3000/api/v1/auth/verify/${123}">Нажмите для подтверждения email</a>`
-//   }
-
-//   try {
-//     const answer = await sgMail.send(mail)
-//     return answer
-//   } catch (err) {
-//     console.log(err)
-//     throw err
-//   }
-// }
-
-// sendMail()
