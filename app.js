@@ -9,39 +9,6 @@ const api = require('./routes/api')
 const app = express()
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short'
 
-// =================================================================================================
-
-// const nodemailer = require('nodemailer')
-// // require('dotenv').config()
-
-// const { EMAIL_PASSWORD } = process.env
-
-// const nodemailerConfig = {
-//   host: 'smtp.meta.ua',
-//   port: 465,
-//   secure: true,
-//   auth: {
-//     user: 'alexcandoit@meta.ua',
-//     pass: EMAIL_PASSWORD
-//   },
-// }
-
-// const transporter = nodemailer.createTransport(nodemailerConfig)
-
-// const mail = {
-//   from: 'alexcandoit@meta.ua',
-//   to: 'alexcandoitt@gmail.com',
-//   subject: 'Test email subject',
-//   text: 'Test email text',
-//   html: '<h2>Test message in html</h2>'
-// }
-
-// transporter.sendMail(mail)
-//   .then(info => console.log(info))
-//   .catch(err => console.log(err))
-
-// =================================================================================================
-
 app.use(express.static(path.join(process.cwd(), 'public')))
 app.use(logger(formatsLogger))
 app.use(cors())
@@ -69,3 +36,29 @@ app.use((err, _, res, __) => {
 })
 
 module.exports = app
+
+// const sgMail = require('@sendgrid/mail')
+// // require('dotenv').config()
+// const { SENDGRID_API_KEY } = process.env
+
+// sgMail.setApiKey(SENDGRID_API_KEY)
+
+// const sendMail = async() => {
+//   const mail = {
+//     to: 'mr.archibaldd@gmail.com',
+//     from: 'alexcandoitt@gmail.com',
+//     subject: 'Подтвердите свой email',
+//     text: 'hi',
+//     html: `<a href="http://localhost:3000/api/v1/auth/verify/${123}">Нажмите для подтверждения email</a>`
+//   }
+
+//   try {
+//     const answer = await sgMail.send(mail)
+//     return answer
+//   } catch (err) {
+//     console.log(err)
+//     throw err
+//   }
+// }
+
+// sendMail()

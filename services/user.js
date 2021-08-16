@@ -4,8 +4,8 @@ const getById = id => User.findById(id)
 
 const getOne = (filter) => User.findOne(filter)
 
-const add = ({ email, password }) => {
-  const newUser = new User({ email })
+const add = ({ password, ...other }) => {
+  const newUser = new User(other)
   newUser.setPassword(password)
   return newUser.save()
 }

@@ -2,7 +2,6 @@ const { Schema } = require('mongoose')
 const bcrypt = require('bcryptjs')
 const Joi = require('joi')
 const gravatar = require('gravatar')
-const { v4: uuidv4 } = require('uuid')
 
 const userSchema = Schema({
   email: {
@@ -39,8 +38,7 @@ const userSchema = Schema({
   },
   verifyToken: {
     type: String,
-    required: [true, 'Verify token is required'],
-    default: uuidv4(),
+    required: [true, 'Verify token is required']
   },
 })
 
